@@ -26,7 +26,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     device/sony/togari/overlay
 
 PRODUCT_COPY_FILES += \
-    device/sony/togari/rootdir/system/etc/flashled_calc_parameters.cfg:system/etc/flashled_calc_parameters.cfg \
     device/sony/togari/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/sony/togari/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
     device/sony/togari/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
