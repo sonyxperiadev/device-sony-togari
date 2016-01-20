@@ -28,8 +28,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES += \
     device/sony/togari/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/sony/togari/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/togari/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
-    device/sony/togari/rootdir/system/etc/sensors_calib.conf:system/etc/sensors_calib.conf
+    device/sony/togari/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
 
 PRODUCT_NAME := aosp_c6833
 PRODUCT_DEVICE := togari
