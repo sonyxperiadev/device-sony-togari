@@ -26,10 +26,25 @@ $(call inherit-product-if-exists, vendor/google/products/gms.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     device/sony/togari/overlay
 
+# Device etc
 PRODUCT_COPY_FILES += \
     device/sony/togari/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/sony/togari/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
     device/sony/togari/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+
+# Device Init
+PRODUCT_PACKAGES += \
+    init.recovery.togari \
+    init.togari \
+    ueventd.togari
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.togari
+
+# NFC
+PRODUCT_PACKAGES += \
+    nfc.togari
 
 PRODUCT_NAME := aosp_c6833
 PRODUCT_DEVICE := togari
