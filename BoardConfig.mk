@@ -16,5 +16,5 @@ include device/sony/rhine/PlatformConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := C6833
 
-#BOARD_KERNEL_CMDLINE += mem=93M@0 mem=1666M@255M
+BOARD_KERNEL_CMDLINE += androidboot.hardware=togari
 BOARD_KERNEL_CMDLINE += mem=1759M
