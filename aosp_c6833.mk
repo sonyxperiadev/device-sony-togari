@@ -14,33 +14,10 @@
 
 TARGET_KERNEL_CONFIG := aosp_rhine_togari_defconfig
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-$(call inherit-product, device/sony/rhine/platform.mk)
-$(call inherit-product, vendor/sony/togari/togari-vendor.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, device/sony/togari/device.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-
-DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/togari/overlay
-
-# Device etc
-PRODUCT_COPY_FILES += \
-    device/sony/togari/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/sony/togari/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/togari/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
-
-# Device Init
-PRODUCT_PACKAGES += \
-    init.recovery.togari \
-    init.togari \
-    ueventd.togari
-
-# Lights
-PRODUCT_PACKAGES += \
-    lights.togari
-
-# NFC
-PRODUCT_PACKAGES += \
-    nfc.togari
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 PRODUCT_NAME := aosp_c6833
 PRODUCT_DEVICE := togari
@@ -48,10 +25,3 @@ PRODUCT_MODEL := Xperia Z Ultra (AOSP)
 PRODUCT_BRAND := Sony
 PRODUCT_MANUFACTURER := Sony
 
-PRODUCT_AAPT_CONFIG := large
-PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=320 \
-    ro.usb.pid_suffix=19C
