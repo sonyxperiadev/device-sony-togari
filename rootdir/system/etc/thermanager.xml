@@ -147,92 +147,129 @@
 	</control>
 
 	<!-- burn-out protection -->
+	<configuration sensor="temp-batt">
+		<threshold>
+			<mitigation name="shutdown" level="off" />
+		</threshold>
+		<threshold trigger="630" clear="550">
+			<mitigation name="shutdown" level="1" />
+		</threshold>
+	</configuration>
 	<configuration sensor="temp-core">
 		<threshold>
 			<mitigation name="shutdown" level="off" />
 		</threshold>
-		<threshold trigger="120" clear="115">
+		<threshold trigger="115" clear="95">
+			<mitigation name="shutdown" level="1" />
+		</threshold>
+	</configuration>
+	<configuration sensor="temp-cpu">
+		<threshold>
+			<mitigation name="shutdown" level="off" />
+		</threshold>
+		<threshold trigger="115" clear="95">
+			<mitigation name="shutdown" level="1" />
+		</threshold>
+	</configuration>
+	<configuration sensor="temp-gpu">
+		<threshold>
+			<mitigation name="shutdown" level="off" />
+		</threshold>
+		<threshold trigger="115" clear="95">
+			<mitigation name="shutdown" level="1" />
+		</threshold>
+	</configuration>
+	<configuration sensor="temp-emmc">
+		<threshold>
+			<mitigation name="shutdown" level="off" />
+		</threshold>
+		<threshold trigger="750" clear="590">
 			<mitigation name="shutdown" level="1" />
 		</threshold>
 	</configuration>
 
-	<!-- USB and DC -->
+	<!-- USB, DC, charging, modem, backlight -->
 	<configuration sensor="temp-emmc">
 		<threshold>
 			<mitigation name="dc" level="off" />
 			<mitigation name="usb" level="off" />
+			<mitigation name="camera" level="off" />
+			<mitigation name="charging" level="off" />
+			<mitigation name="modem" level="off" />
+			<mitigation name="backlight" level="off" />
+			<mitigation name="cpu" level="off" />
+			<mitigation name="gpu" level="off" />
 		</threshold>
-		<threshold trigger="384" clear="364">
+		<threshold trigger="490" clear="470">
+			<mitigation name="charging" level="1" />
 			<mitigation name="dc" level="1" />
 			<mitigation name="usb" level="1" />
+			<mitigation name="backlight" level="off" />
+			<mitigation name="cpu" level="off" />
+			<mitigation name="gpu" level="off" />
 		</threshold>
-		<threshold trigger="400" clear="380">
+		<threshold trigger="515" clear="490">
+			<mitigation name="charging" level="2" />
 			<mitigation name="dc" level="2" />
 			<mitigation name="usb" level="2" />
+			<mitigation name="backlight" level="off" />
+			<mitigation name="cpu" level="off" />
+			<mitigation name="gpu" level="off" />
 		</threshold>
-		<threshold trigger="416" clear="396">
+		<threshold trigger="535" clear="515">
+			<mitigation name="camera" level="off" />
+			<mitigation name="charging" level="4" />
 			<mitigation name="dc" level="3" />
 			<mitigation name="usb" level="3" />
+			<mitigation name="backlight" level="1" />
+			<mitigation name="cpu" level="off" />
+			<mitigation name="gpu" level="off" />
 		</threshold>
-		<threshold trigger="424" clear="412">
+		<threshold trigger="555" clear="535">
+			<mitigation name="camera" level="1" />
+			<mitigation name="charging" level="6" />
 			<mitigation name="dc" level="4" />
 			<mitigation name="usb" level="4" />
+			<mitigation name="backlight" level="2" />
+			<mitigation name="cpu" level="1" />
+			<mitigation name="gpu" level="1" />
 		</threshold>
-		<threshold trigger="432" clear="420">
+		<threshold trigger="575" clear="535">
+			<mitigation name="camera" level="1" />
+			<mitigation name="charging" level="7" />
 			<mitigation name="dc" level="5" />
 			<mitigation name="usb" level="5" />
+			<mitigation name="backlight" level="3" />
+			<mitigation name="modem" level="off" />
+			<mitigation name="cpu" level="2" />
+			<mitigation name="gpu" level="2" />
 		</threshold>
-		<threshold trigger="448" clear="440">
-			<mitigation name="dc" level="6" />
-			<mitigation name="usb" level="6" />
+		<threshold trigger="590" clear="560">
+			<mitigation name="camera" level="2" />
+			<mitigation name="charging" level="7" />
+			<mitigation name="dc" level="5" />
+			<mitigation name="usb" level="5" />
+			<mitigation name="backlight" level="4" />
+			<mitigation name="modem" level="1" />
+			<mitigation name="cpu" level="3" />
+			<mitigation name="gpu" level="3" />
 		</threshold>
 	</configuration>
 
-	<!-- charging -->
-	<configuration sensor="temp-emmc">
-		<threshold>
-			<mitigation name="charging" level="off" />
-		</threshold>
-		<threshold trigger="384" clear="372">
-			<mitigation name="charging" level="2" />
-		</threshold>
-		<threshold trigger="400" clear="380">
-			<mitigation name="charging" level="4" />
-		</threshold>
-		<threshold trigger="416" clear="396">
-			<mitigation name="charging" level="6" />
-		</threshold>
-		<threshold trigger="432" clear="420">
-			<mitigation name="charging" level="7" />
-		</threshold>
-		<threshold trigger="448" clear="436">
-			<mitigation name="charging" level="8" />
-		</threshold>
-	</configuration>
+	<!-- Battery -->
 	<configuration sensor="temp-batt">
 		<threshold>
 			<mitigation name="charge_en" level="off" />
 		</threshold>
-		<threshold trigger="464" clear="442">
+		<threshold trigger="550" clear="500">
 			<mitigation name="charge_en" level="1" />
 		</threshold>
-		<threshold trigger="800" clear="780">
+		<threshold trigger="600" clear="550">
 			<mitigation name="charge_en" level="2" />
 		</threshold>
 	</configuration>
 
 	<!-- GPU -->
-	<configuration sensor="temp-emmc">
-		<threshold>
-			<mitigation name="gpu" level="off" />
-		</threshold>
-		<threshold trigger="440" clear="428">
-			<mitigation name="gpu" level="3" />
-		</threshold>
-		<threshold trigger="448" clear="436">
-			<mitigation name="gpu" level="4" />
-		</threshold>
-	</configuration>
 	<configuration sensor="temp-gpu">
 		<threshold>
 			<mitigation name="gpu" level="off" />
@@ -242,32 +279,6 @@
 		</threshold>
 		<threshold trigger="120" clear="110">
 			<mitigation name="gpu" level="3" />
-		</threshold>
-	</configuration>
-
-	<!-- modem -->
-	<configuration sensor="temp-emmc">
-		<threshold>
-			<mitigation name="modem" level="off" />
-		</threshold>
-		<threshold trigger="452" clear="436">
-			<mitigation name="modem" level="1" />
-		</threshold>
-	</configuration>
-
-	<!-- backlight -->
-	<configuration sensor="temp-emmc">
-		<threshold>
-			<mitigation name="backlight" level="off" />
-		</threshold>
-		<threshold trigger="432" clear="420">
-			<mitigation name="backlight" level="1" />
-		</threshold>
-		<threshold trigger="448" clear="428">
-			<mitigation name="backlight" level="2" />
-		</threshold>
-		<threshold trigger="520" clear="496">
-			<mitigation name="backlight" level="3" />
 		</threshold>
 	</configuration>
 
