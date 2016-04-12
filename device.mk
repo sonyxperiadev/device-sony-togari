@@ -19,7 +19,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES := \
     device/sony/togari/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/sony/togari/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/togari/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+    device/sony/togari/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
 
 # Device Specific Permissions
 PRODUCT_COPY_FILES += \
