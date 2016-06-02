@@ -37,6 +37,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.togari
 
+# Simple PowerHAL
+PRODUCT_PACKAGES += \
+    power.togari
+
 # NFC
 PRODUCT_PACKAGES += \
     nfc.togari
