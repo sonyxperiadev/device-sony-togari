@@ -1165,14 +1165,16 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
         <ctl name="HPHL DAC Switch" value="1" />
+        <!-- Disable compramators to improve audio quality -->
+        <ctl name="COMP1 Switch" value="0" />
         <!--80 % of 20 register: 0x1AE-->
-        <ctl name="HPHL Volume" value="16" />
+        <ctl name="HPHL Volume" value="17" />
         <!--80 % of 20 register: 0x1B4-->
-        <ctl name="HPHR Volume" value="16" />
+        <ctl name="HPHR Volume" value="17" />
         <!--66 % of 124 (rounded) register: 0x2B7-->
-        <ctl name="RX1 Digital Volume" value="82" />
+        <ctl name="RX1 Digital Volume" value="87" />
         <!--66 % of 124 (rounded) register: 0x2BF-->
-        <ctl name="RX2 Digital Volume" value="82" />
+        <ctl name="RX2 Digital Volume" value="87" />
     </path>
 
     <path name="headset-mic">
